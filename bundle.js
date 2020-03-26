@@ -19288,7 +19288,7 @@ const Home = props => {
                 width: "100%",
                 height: `${barHeight}px`,
                 position: "fixed",
-                backgroundImage: "url('./img/bar.png')",
+                backgroundImage: "url('wvp/img/bar.png')",
                 backgroundRepeat: "no-repeat",
                 margin: "0",
                 padding: "0",
