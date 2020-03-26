@@ -1,0 +1,30 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-block-end: 0;
+  margin-bottom: 0 !important; }
+
+main.container {
+  padding: 0; }
+
+.my-card {
+  padding: 10px;
+  width: 100%; }
+
+.my-title-card {
+  font-size: 2rem;
+  color: white;
+  padding: 0px 10px;
+  margin: 0;
+  width: 100%;
+  font-weight: 100; }
+
+.my-card-body {
+  background-color: white;
+  padding: 0px 10px;
+  margin: 0; }
+  .my-card-body h2 {
+    font-weight: 100 !important;
+    padding-top: 15px; }
+
+
+/*# sourceMappingURL=style.css.map*/
