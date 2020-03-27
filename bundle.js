@@ -19072,6 +19072,18 @@ const App = props => {
                 document.body.style.backgroundColor = "#AADAFF";
                 break;
             }
+            case "/food": {
+                body_scroll_lock_1.enableBodyScroll(document.body);
+                changeNavColor("light", "light", "light", "black");
+                document.body.style.backgroundColor = "#f8f9fa";
+                break;
+            }
+            case "/drinks": {
+                body_scroll_lock_1.enableBodyScroll(document.body);
+                changeNavColor("light", "light", "light", "black");
+                document.body.style.backgroundColor = "#f8f9fa";
+                break;
+            }
             default: {
                 body_scroll_lock_1.enableBodyScroll(document.body);
                 changeNavColor("light", "light", "light", "black");
