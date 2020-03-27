@@ -19275,7 +19275,7 @@ const Home = props => {
     const skyHeight = window.innerHeight - barHeight + 2;
     return (React.createElement("div", null,
         React.createElement("section", { className: "row" },
-            React.createElement("div", { className: "col-8 lead", style: {
+            React.createElement("div", { className: "col-10 lead", style: {
                     color: "white",
                     fontSize: "2rem",
                     fontFamily: "Gill Sans",
