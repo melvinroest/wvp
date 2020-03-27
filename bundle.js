@@ -19281,7 +19281,7 @@ const Home = props => {
                     fontFamily: "Gill Sans",
                     left: 15,
                     fontWeight: 100
-                } }, "Hilltop Bar")),
+                } }, "Rooftop Bar")),
         React.createElement("div", { style: {
                 zIndex: -1,
                 width: "100%",
