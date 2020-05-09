@@ -19345,6 +19345,7 @@ const PIXEL_RATIO = (() => {
 const Location = (props) => {
     const locationHeight = 429;
     const canvasRef = React.useRef(null);
+    const email = "wvpcontactinfo@gmail.com";
     react_1.useEffect(() => {
         const canvas = canvasRef.current;
         const context = canvas.getContext("2d");
