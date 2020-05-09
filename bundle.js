@@ -19345,7 +19345,6 @@ const PIXEL_RATIO = (() => {
 const Location = (props) => {
     const locationHeight = 429;
     const canvasRef = React.useRef(null);
-    const email = "wvpcontactinfo@gmail.com";
     const isEmail = false;
     react_1.useEffect(() => {
         const canvas = canvasRef.current;
@@ -19378,7 +19377,7 @@ const Location = (props) => {
     return (React.createElement("div", null,
         React.createElement(Card_1.default, { title: "Location", titleBackgroundColor: "#FCBA6A" },
             React.createElement("p", null, "The easiest way to find the bar is to find Baan Klong's Guesthouse via Google Maps and go up the road from there."),
-            isEmail && React.createElement("span", { id: "email" }, email),
+            isEmail && React.createElement("span", { id: "email" }, "wvpcontactinfo@gmail.com"),
             React.createElement("div", { style: {
                     height: 16 / 2,
                     width: 1,
