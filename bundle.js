@@ -19325,10 +19325,65 @@ exports.default = Home;
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
 const Card_1 = __webpack_require__(/*! ../components/Card */ "./src/components/Card.tsx");
-const Location = props => {
+const react_1 = __webpack_require__(/*! react */ "react");
+const entity = "wowviewpoint";
+const domain = "gmail";
+const tld = "com";
+const emD = ".";
+const emA = "@";
+const PIXEL_RATIO = (() => {
+    const ctx = document.createElement("canvas").getContext("2d");
+    const dpr = window.devicePixelRatio || 1;
+    const bsr = ctx.webkitBackingStorePixelRatio ||
+        ctx.mozBackingStorePixelRatio ||
+        ctx.msBackingStorePixelRatio ||
+        ctx.oBackingStorePixelRatio ||
+        ctx.backingStorePixelRatio ||
+        1;
+    return dpr / bsr;
+})();
+const Location = (props) => {
     const locationHeight = 429;
+    const canvasRef = React.useRef(null);
+    react_1.useEffect(() => {
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
+        const text = `You can contact us at: ${entity}${emA}${domain}${emD}${tld}`;
+        const canvasFontSize = window
+            .getComputedStyle(document.body, null)
+            .getPropertyValue("font-size"); // e.g. 16px
+        context.font = `${canvasFontSize} Gill Sans`;
+        canvas.width = context.measureText(text).width * PIXEL_RATIO;
+        console.log(canvas.width);
+        canvas.height = parseInt(canvasFontSize) * PIXEL_RATIO;
+        canvas.style.width = `${canvas.width / PIXEL_RATIO}px`;
+        canvas.style.height = `${parseInt(canvasFontSize)}px`;
+        context.setTransform(PIXEL_RATIO, 0, 0, PIXEL_RATIO, 0, 0);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        // console.log(
+        //   text,
+        //   canvasFontSize,
+        //   canvas.width,
+        //   canvas.height,
+        //   context.font
+        // );
+        context.fillStyle = "#000000";
+        context.font = `${canvasFontSize} Gill Sans`; // for some reason context.font was reset, so I'm setting it back again
+        context.textBaseline = "top";
+        context.fillText(text, 0, 0);
+    });
+    console.log(canvasRef);
     return (React.createElement("div", null,
-        React.createElement(Card_1.default, { title: "Location", titleBackgroundColor: "#FCBA6A" }, "The easiest way to find us is to find Baan Klong's Guesthouse via Google Maps and go up the road from there. Contact us at: [contact_info]."),
+        React.createElement(Card_1.default, { title: "Location", titleBackgroundColor: "#FCBA6A" },
+            React.createElement("p", null, "The easiest way to find the bar is to find Baan Klong's Guesthouse via Google Maps and go up the road from there."),
+             false && false,
+            React.createElement("div", { style: {
+                    height: 16 / 2,
+                    width: 1,
+                    border: "0px solid red",
+                } }),
+            React.createElement("canvas", { id: "em", style: { display: "inline-block" }, ref: canvasRef }),
+            React.createElement("br", null)),
         React.createElement("div", { style: {
                 position: "absolute",
                 bottom: 0,
@@ -19339,7 +19394,7 @@ const Location = props => {
                 width: "100%",
                 height: `${locationHeight}px`,
                 backgroundImage: "url('img/location.png')",
-                backgroundRepeat: "no-repeat"
+                backgroundRepeat: "no-repeat",
             } })));
 };
 exports.default = Location;
